@@ -28,4 +28,5 @@ Having said that, here is a list of the programming techniques, that we want to 
 ---
 
 https://www.freecodecamp.org/news/markdown-cheatsheet/
+https://wwwlehre.dhbw-stuttgart.de/~kfg/uml/uml.pdf
 
