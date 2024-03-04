@@ -33,8 +33,8 @@ Bankkunde::Bankkunde(std::string vorname, std::string nachname) : vorname(vornam
 }
 
 // Getter und Setter für Kunden-ID
-void Bankkunde::setKundenID(unsigned int Id) {
-  this->kundenID = Id;
+void Bankkunde::setKundenID(unsigned int kundenID) {
+  this->kundenID =kundenID;
 }
 
 unsigned int Bankkunde::getKundenID() {
@@ -42,16 +42,16 @@ unsigned int Bankkunde::getKundenID() {
 }
 
 // Getter und Setter für Vorname
-void Bankkunde::setVorname(std::string vname) {
-  this->vorname = vname;
+void Bankkunde::setVorname(std::string vorname) {
+  this->vorname = vorname;
 }
 
 std::string Bankkunde::Bankkunde::getVorname() {
   return this->vorname;
 }
 // Getter und Setter für Nachname
-void Bankkunde::Bankkunde::setNahname(std::string nname) {
-  this->nachname = nname;
+void Bankkunde::Bankkunde::setNachname(std::string nachname) {
+  this->nachname = nachname;
 }
 std::string Bankkunde::Bankkunde::getNachname() {
   return this->nachname;

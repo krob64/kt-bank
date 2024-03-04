@@ -22,13 +22,13 @@ class Bankkunde {
             Kreditkartenkonto* kreditkartenKonto);
   Bankkunde(std::string vorname, std::string nachname);
 
-  void setKundenID(unsigned int Id);
+  void setKundenID(unsigned int kundenID);
   unsigned int getKundenID();
 
-  void setVorname(std::string vname);
+  void setVorname(std::string vorname);
   std::string getVorname();
 
-  void setNahname(std::string nname);
+  void setNachname(std::string nachname);
   std::string getNachname();
 
   void setTagesgeldKonto(Tagesgeldkonto* tagesgeldKonto);
