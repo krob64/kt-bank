@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-04T11:06:50.506Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="667O7uferEDN-kJpev_O" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-03-05T21:40:37.081Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="SyXxbIsmwcoITbV_O0EK" version="23.1.5" type="device">
   <diagram name="Page-1" id="s-HMXYgOpkfJJTglPWlI">
-    <mxGraphModel dx="899" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1260" dy="1189" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -94,10 +94,10 @@
         <mxCell id="2RG2JbtTriZIpNJXNHU2-9" value="&lt;div&gt;Kreditkarte&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1020" y="340" width="230" height="242" as="geometry" />
         </mxCell>
-        <mxCell id="6PrJYLI9oZnV0FBIuRU_-3" value="- gesperrt: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2RG2JbtTriZIpNJXNHU2-9">
+        <mxCell id="6PrJYLI9oZnV0FBIuRU_-3" value="- gesperrt: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2RG2JbtTriZIpNJXNHU2-9" vertex="1">
           <mxGeometry y="26" width="230" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="6PrJYLI9oZnV0FBIuRU_-2" value="- validKarte: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="2RG2JbtTriZIpNJXNHU2-9">
+        <mxCell id="6PrJYLI9oZnV0FBIuRU_-2" value="- validKarte: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2RG2JbtTriZIpNJXNHU2-9" vertex="1">
           <mxGeometry y="52" width="230" height="26" as="geometry" />
         </mxCell>
         <mxCell id="2RG2JbtTriZIpNJXNHU2-95" value="- KREDITKARTEN_NR: std::vector&amp;lt;int&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2RG2JbtTriZIpNJXNHU2-9" vertex="1">
@@ -269,12 +269,12 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6PrJYLI9oZnV0FBIuRU_-4" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2RG2JbtTriZIpNJXNHU2-71">
+        <mxCell id="6PrJYLI9oZnV0FBIuRU_-4" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2RG2JbtTriZIpNJXNHU2-71" vertex="1" connectable="0">
           <mxGeometry x="-0.588" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6PrJYLI9oZnV0FBIuRU_-5" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2RG2JbtTriZIpNJXNHU2-71">
+        <mxCell id="6PrJYLI9oZnV0FBIuRU_-5" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2RG2JbtTriZIpNJXNHU2-71" vertex="1" connectable="0">
           <mxGeometry x="-0.609" y="-1" relative="1" as="geometry">
             <mxPoint x="2" y="1" as="offset" />
           </mxGeometry>
@@ -321,6 +321,9 @@
         </mxCell>
         <mxCell id="Jpd8JONi1-Sz0mRhObYV-8" value="We have omitted the getters and setters&lt;br&gt;to provide a better overview." style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#E6E6E6;" parent="1" vertex="1">
           <mxGeometry x="800" y="-170" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fqLaedZv44Sz63iMlGS1-1" value="Abstrakte Kartenklasse mit leeren abstrakten Methoden sinnvoll?&lt;br&gt;z.B. + brauchtPIN(): Bool&lt;br&gt;-&amp;gt; Bankautomat Klasse müsste nicht angetastet werden&lt;br&gt;beim Hinzufügen einer neuen Karte.&lt;br&gt;Erleichtert das Refactoring später unter Umständen." style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="110" width="460" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
