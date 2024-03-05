@@ -1,7 +1,8 @@
 #include "Konto.h"
 
-Konto::Konto(){
-
+Konto::Konto() : KONTO_NUMMER(0) {
+  this->gesperrt = false;
+  this->kontostand = 0;
 };
 
 Konto::~Konto() {}
@@ -12,13 +13,29 @@ Konto::~Konto() {}
  * @param betrag
  * @param plusminus : true für einzahlen, false für auszahlen
  */
-void Konto::setKontostand(double betrag, bool plusminus) {
-  if (plusminus) {
-    this->kontostand += betrag;
-  } else {
-    this->kontostand -= betrag;
-  }
+void Konto::setKontostand(double betrag) {
+  this->kontostand = betrag;
 };
+
 double Konto::getKontostand() {
   return this->kontostand;
 };
+
+unsigned int Konto::getKontonummer() {
+  return this->KONTO_NUMMER;
+}
+
+bool Konto::getGesperrt() {
+  return this->gesperrt;
+}
+
+void Konto::setGesperrt(bool value) {
+  this->gesperrt = value;
+}
+
+bool Konto::kontoGedeckt(double betrag) {
+  if (this->kontostand >= betrag) {
+    return true;
+  }
+  return false;
+}

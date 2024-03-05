@@ -61,12 +61,54 @@ void Bank::automatLoeschen(unsigned int automatID) {
  * antworten:   std::optional<T>, int return mit T* als parameter, exception werfen, leeren bankkunden returnen (wie es unten auch
  *              erstmals implementiert wurde)
  */
-Bankkunde Bank::getKunde(unsigned int kundenID) {
+// Bankkunde Bank::getKunde(unsigned int kundenID) {
+//   for (int i = 0; i < this->kunden.size(); i++) {
+//     if (this->kunden.at(i).kundenID == kundenID) {
+//       return this->kunden.at(i);
+//     }
+//   }
+// }
+
+int Bank::getKunde(unsigned int kundenID, Bankkunde* gefundenerKunde) {
   for (int i = 0; i < this->kunden.size(); i++) {
-    if (this->kunden.at(i).kundenID == kundenID) {
-      return this->kunden.at(i);
+    if (this->kunden[i].getKundenID() == kundenID) {
+      *gefundenerKunde = this->kunden[i];
+      return 0;
     }
   }
+  std::cout << "kundenID [" << kundenID << "] koennte nicht gefunden werden." << std::endl;
+  return ELEMENT_NOT_FOUND;
+}
+
+int Bank::getKunde(int index, Bankkunde* gefundenerKunde) {
+  if (index > this->kunden.size() - 1) {
+    std::cout << "index [" << index << "] in kunden is out of bounds" << std::endl;
+    return VECTOR_INDEX_OOB;
+  }
+
+  *gefundenerKunde = this->kunden[index];
+  return 0;
+}
+
+int Bank::getAutomat(unsigned int automatID, Bankautomat* gefundenerAutomat) {
+  for (int i = 0; i < this->automaten.size(); i++) {
+    if (this->automaten[i].getAutomatID() == automatID) {
+      *gefundenerAutomat = this->automaten[i];
+      return 0;
+    }
+  }
+  std::cout << "automatID [" << automatID << "] koennte nicht gefunden werden." << std::endl;
+  return ELEMENT_NOT_FOUND;
+}
+
+int Bank::getAutomat(int index, Bankautomat* gefundenerAutomat) {
+  if (index > this->automaten.size() - 1) {
+    std::cout << "index [" << index << "] in automaten is out of bounds" << std::endl;
+    return VECTOR_INDEX_OOB;
+  }
+
+  *gefundenerAutomat = this->automaten[index];
+  return 0;
 }
 
 // std::optional implementation
@@ -78,17 +120,13 @@ Bankkunde Bank::getKunde(unsigned int kundenID) {
  *      }
  *
  */
-std::optional<Bankkunde> Bank::getKunde(unsigned int kundenID) {
-  for (int i = 0; i < this->kunden.size(); i++) {
-    if (this->kunden.at(i).kundenID == kundenID) {
-      return this->kunden.at(i);
-    }
-  }
-  return {};
-}
-
-int Bank::getKunde(unsigned int kundenID, Bankkunde* p_kunde) {}
-
-Bankkunde Bank::getKunde(int index) {}
-Bankautomat Bank::getAutomat(unsigned int automatID) {}
-Bankautomat Bank::getAutomat(int index) {}
+// std::optional<Bankkunde> Bank::getKunde(unsigned int kundenID) {
+//   for (int i = 0; i < this->kunden.size(); i++) {
+//     if (this->kunden.at(i).getKundenID() == kundenID) {
+//       std::optional<Bankkunde> some_opt = std::nullopt;
+//
+//       return;
+//     }
+//   }
+//   return {};
+// }

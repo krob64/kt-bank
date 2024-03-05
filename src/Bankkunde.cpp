@@ -7,16 +7,30 @@ Bankkunde::Bankkunde(unsigned int kundenID,
                      std::string vorname,
                      std::string nachname,
                      Tagesgeldkonto* tagesgeldKonto,
-                     Festgeldkonto* festgelgKonto,
+                     Festgeldkonto* festgeldKonto,
                      Girokonto* giroKonto,
                      Kreditkartenkonto* kreditkartenKonto)
-    : kundenID(Id),
-      vorname(vname),
-      nachname(nname),
+    : kundenID(kundenID),
+      vorname(vorname),
+      nachname(nachname),
       tagesgeldKonto(tagesgeldKonto),
-      festgelgKonto(festgelgKonto),
+      festgeldKonto(festgeldKonto),
       giroKonto(giroKonto),
-      kreditkartenKonto(kreditkartenKonto) {}
+      kreditkartenKonto(kreditkartenKonto) 
+{
+  this->kundenID = 0;
+  this->vorname = "";
+  this->nachname = "";
+  this->tagesgeldKonto = "";
+  this->festgeldKonto = "";
+  this->giroKonto = "";
+  this->kreditkartenKonto = "";
+}
+
+Bankkunde::Bankkunde(std::string vorname, std::string nachname) : vorname(vorname),nachname(nachname){
+  this->vorname = vorname;
+  this->nachname = nachname;
+}
 
 // Getter und Setter für Kunden-ID
 void Bankkunde::setKundenID(unsigned int Id) {
@@ -50,8 +64,8 @@ Tagesgeldkonto* Bankkunde::getTagesgeldKonto() {
   return this->tagesgeldKonto;
 }
 
-//// Getter und Setter für FestgeldKonto
-void Bankkunde::setFestgeldKonto(Festgeldkonto* festgelgKonto) {
+// Getter und Setter für FestgeldKonto
+void Bankkunde::setFestgeldKonto(Festgeldkonto* festgeldKonto) {
   this->festgeldKonto = festgeldKonto;
 }
 Festgeldkonto* Bankkunde::getFestgeldKonto() {

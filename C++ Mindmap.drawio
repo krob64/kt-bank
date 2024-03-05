@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-03-04T10:19:04.737Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="dPyZUuxD8x2rO1sQUQLX" version="23.1.5" type="device" pages="3">
-  <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Page-1">
-    <mxGraphModel dx="911" dy="592" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000033" math="0" shadow="0">
+<mxfile host="Electron" modified="2024-03-05T11:54:57.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="sDpRJmfyYPPfU4R02cnr" version="23.1.5" type="device" pages="3">
+  <diagram id="6a731a19-8d31-9384-78a2-239565b7b9f0" name="Index">
+    <mxGraphModel dx="899" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000033" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -696,7 +696,7 @@
           <mxGeometry x="142" y="856.5" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="1527" value="Notepad++" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="37" y="801.5" width="120" height="40" as="geometry" />
+          <mxGeometry x="90" y="791.5" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="1528" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="1516" target="1517" edge="1">
           <mxGeometry x="-1498" y="-303.5" width="100" height="100" as="geometry">
@@ -705,7 +705,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1529" value="Drawio" style="rounded=1;fillColor=#a29dc5;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
-          <mxGeometry x="77" y="731.5" width="120" height="40" as="geometry" />
+          <mxGeometry x="67" y="706.5" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="1530" value="" style="edgeStyle=none;endArrow=none;strokeWidth=3;strokeColor=#A29DC5;html=1;" parent="1" source="1516" target="1518" edge="1">
           <mxGeometry x="-1498" y="-303.5" width="100" height="100" as="geometry">
@@ -840,20 +840,20 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="_r5vXV7CewMlZieEKBPp" name="Page-2">
-    <mxGraphModel dx="1260" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#001933" math="0" shadow="0">
+  <diagram id="_r5vXV7CewMlZieEKBPp" name="Git">
+    <mxGraphModel dx="899" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#001933" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <UserObject label="GIT" link="data:page/id,6a731a19-8d31-9384-78a2-239565b7b9f0" id="LA6WkqONKLYMfOAHQt9q-3">
-          <mxCell style="ellipse;whiteSpace=wrap;html=1;align=center;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};treeFolding=1;treeMoving=1;" vertex="1" parent="1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;align=center;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};treeFolding=1;treeMoving=1;" parent="1" vertex="1">
             <mxGeometry x="350" y="420" width="100" height="40" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="LA6WkqONKLYMfOAHQt9q-4" value="GITHUB" style="whiteSpace=wrap;html=1;rounded=1;arcSize=50;align=center;verticalAlign=middle;strokeWidth=1;autosize=1;spacing=4;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};" vertex="1" parent="1">
+        <mxCell id="LA6WkqONKLYMfOAHQt9q-4" value="GITHUB" style="whiteSpace=wrap;html=1;rounded=1;arcSize=50;align=center;verticalAlign=middle;strokeWidth=1;autosize=1;spacing=4;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="475" y="392" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="LA6WkqONKLYMfOAHQt9q-5" value="" style="edgeStyle=entityRelationEdgeStyle;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;rounded=0;fontColor=#CC6600;strokeColor=#994C00;" edge="1" target="LA6WkqONKLYMfOAHQt9q-4" parent="1" source="LA6WkqONKLYMfOAHQt9q-3">
+        <mxCell id="LA6WkqONKLYMfOAHQt9q-5" value="" style="edgeStyle=entityRelationEdgeStyle;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;rounded=0;fontColor=#CC6600;strokeColor=#994C00;" parent="1" source="LA6WkqONKLYMfOAHQt9q-3" target="LA6WkqONKLYMfOAHQt9q-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="440" y="434" as="sourcePoint" />
           </mxGeometry>
@@ -861,14 +861,16 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="cmHRpI0qEukZB0bABsuv" name="Page-3">
-    <mxGraphModel dx="911" dy="592" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#001933" math="0" shadow="0">
+  <diagram id="cmHRpI0qEukZB0bABsuv" name="Princ">
+    <mxGraphModel dx="899" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#001933" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="9SleKPnV9wsHplDsAwOd-1" value="Principles" style="ellipse;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=20;fontColor=#FFFFFF;align=center;strokeWidth=3;fillColor=#1699D3;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="396.5" y="271.5" width="120" height="120" as="geometry" />
-        </mxCell>
+        <UserObject label="Principles" link="data:page/id,6a731a19-8d31-9384-78a2-239565b7b9f0" id="9SleKPnV9wsHplDsAwOd-1">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=20;fontColor=#FFFFFF;align=center;strokeWidth=3;fillColor=#1699D3;strokeColor=none;" vertex="1" parent="1">
+            <mxGeometry x="396.5" y="271.5" width="120" height="120" as="geometry" />
+          </mxCell>
+        </UserObject>
         <mxCell id="9SleKPnV9wsHplDsAwOd-2" value="SOLID" style="rounded=1;fillColor=#64BBE2;strokeColor=none;strokeWidth=3;shadow=0;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="391.5" y="490" width="130" height="40" as="geometry" />
         </mxCell>

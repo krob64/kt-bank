@@ -18,7 +18,7 @@ Windows:
 
     VSCODE (MinGW): 1. ordner namens build erstellen 
                     2. ```cd build```
-                    3. ```cmake .. -G MinGW Makefiles```
+                    3. ```cmake .. -G "MinGW Makefiles"```
                     4. ```mingw32-make.exe```
                     5. ```Bank.exe```
 

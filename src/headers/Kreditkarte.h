@@ -2,6 +2,7 @@
 #define KARTE_H */
 #pragma once
 #include "Bankkunde.h"
+#include "Karte.h"
 
 class Kreditkarte {
  public:
