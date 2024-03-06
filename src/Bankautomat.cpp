@@ -10,16 +10,16 @@ Bankautomat::Bankautomat(double startBetrag)
 }
 
 
-int Bankautomat::auszahlung(girokonto* girokonto, kreditkarte* kreditkarte, int auszahlungsBetrag) {
+int Bankautomat::auszahlung(girokonto* girokonto, kreditkonto* kreditkonto, int auszahlungsBetrag) {    
 
   // Kreditkarte
   if (!girokonto) {
-    if (!konto->getKreditkarte()->kartenCheck()) {
+    if (!kreditkonto->getKreditkarte()->kartenCheck()) {
       std::cout << "Diese Kreditkarte oder der PIN ist ungültig. Der Vorgang wird abgebrochen!" << std::endl;
       return -1;
     }
 
-    if (!konto->getGesperrt()) {
+    if (!kreditkonto->getGesperrt()) {
       std::cout << "Diese Kreditkarte ist gesperrt. Der Vorgang wird abgebrochen!" << std::endl;
       return -1;
     }
@@ -30,27 +30,27 @@ int Bankautomat::auszahlung(girokonto* girokonto, kreditkarte* kreditkarte, int 
       return -1;
     }
 
-    if (konto->getKontostand() < auszahlungsBetrag) {
-      std::cout << "Es ist nicht genug Geld auf dem Konto! Sie können momentan maximal :" << kunde.giroKonto.getKontostand() << std::endl;
+    if (kreditkonto->getKontostand() < auszahlungsBetrag) {
+      std::cout << "Es ist nicht genug Geld auf dem Konto! Sie können momentan maximal :" << kreditkonto.getKontostand() << std::endl;
       return -1;
     }
 
     this->bargeld -= auszahlungsBetrag;
 
-    konto->setKontoStand(konto->getKontoStand() - auszahlungsBetrag);
-    std::cout << auszahlungsbetrag << " Euro wurden abgehoben!" << std::endl;
+    kreditkonto->setKontoStand(kreditkonto->getKontoStand() - auszahlungsBetrag);
+    std::cout << auszahlungsBetrag << " Euro wurden abgehoben!" << std::endl;
 
     return auszahlungsBetrag;
   }
 
   // Girokonto
 
-  if (!konto->getGirokarte()->kartenCheck()) {
+  if (!girokonto->getGirokarte()->kartenCheck()) {
     std::cout << "Diese Girokarte oder der PIN ist ungültig. Der Vorgang wird abgebrochen!" << std::endl;
     return -1;
   }
 
-  if (!konto->getGesperrt()) {
+  if (!girokonto->getGesperrt()) {
     std::cout << "Diese Girokarte ist gesperrt. Der Vorgang wird abgebrochen!" << std::endl;
     return -1;
   }
@@ -61,15 +61,15 @@ int Bankautomat::auszahlung(girokonto* girokonto, kreditkarte* kreditkarte, int 
     return -1;
   }
 
-  if (konto->getKontoStand() < auszahlungsBetrag) {
-    std::cout << "Es ist nicht genug Geld auf dem Konto! Sie können momentan maximal :" << kunde.giroKonto.getKontostand() << std::endl;
+  if (girokonto->getKontoStand() < auszahlungsBetrag) {
+    std::cout << "Es ist nicht genug Geld auf dem Konto! Sie können momentan maximal :" << girokonto.getKontostand() << std::endl;
     return -1;
   }
 
   this->bargeld -= auszahlungsBetrag;
 
-  konto->setKontoStand(konto->getKontoStand() - auszahlungsBetrag);
-  std::cout << auszahlungsbetrag << " Euro wurden abgehoben!" << std::endl;
+  girokonto->setKontoStand(girokonto->getKontoStand() - auszahlungsBetrag);
+  std::cout << auszahlungsBetrag << " Euro wurden abgehoben!" << std::endl;
 
   return auszahlungsBetrag;
 
