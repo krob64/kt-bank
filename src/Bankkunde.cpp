@@ -7,20 +7,34 @@ Bankkunde::Bankkunde(unsigned int kundenID,
                      std::string vorname,
                      std::string nachname,
                      Tagesgeldkonto* tagesgeldKonto,
-                     Festgeldkonto* festgelgKonto,
+                     Festgeldkonto* festgeldKonto,
                      Girokonto* giroKonto,
                      Kreditkartenkonto* kreditkartenKonto)
-    : kundenID(Id),
-      vorname(vname),
-      nachname(nname),
+    : kundenID(kundenID),
+      vorname(vorname),
+      nachname(nachname),
       tagesgeldKonto(tagesgeldKonto),
-      festgelgKonto(festgelgKonto),
+      festgeldKonto(festgeldKonto),
       giroKonto(giroKonto),
-      kreditkartenKonto(kreditkartenKonto) {}
+      kreditkartenKonto(kreditkartenKonto) 
+{
+  this->kundenID = 0;
+  this->vorname = "";
+  this->nachname = "";
+  this->tagesgeldKonto = "";
+  this->festgeldKonto = "";
+  this->giroKonto = "";
+  this->kreditkartenKonto = "";
+}
+
+Bankkunde::Bankkunde(std::string vorname, std::string nachname) : vorname(vorname),nachname(nachname){
+  this->vorname = vorname;
+  this->nachname = nachname;
+}
 
 // Getter und Setter für Kunden-ID
-void Bankkunde::setKundenID(unsigned int Id) {
-  this->kundenID = Id;
+void Bankkunde::setKundenID(unsigned int kundenID) {
+  this->kundenID =kundenID;
 }
 
 unsigned int Bankkunde::getKundenID() {
@@ -28,16 +42,16 @@ unsigned int Bankkunde::getKundenID() {
 }
 
 // Getter und Setter für Vorname
-void Bankkunde::setVorname(std::string vname) {
-  this->vorname = vname;
+void Bankkunde::setVorname(std::string vorname) {
+  this->vorname = vorname;
 }
 
 std::string Bankkunde::Bankkunde::getVorname() {
   return this->vorname;
 }
 // Getter und Setter für Nachname
-void Bankkunde::Bankkunde::setNahname(std::string nname) {
-  this->nachname = nname;
+void Bankkunde::Bankkunde::setNachname(std::string nachname) {
+  this->nachname = nachname;
 }
 std::string Bankkunde::Bankkunde::getNachname() {
   return this->nachname;
@@ -50,8 +64,8 @@ Tagesgeldkonto* Bankkunde::getTagesgeldKonto() {
   return this->tagesgeldKonto;
 }
 
-//// Getter und Setter für FestgeldKonto
-void Bankkunde::setFestgeldKonto(Festgeldkonto* festgelgKonto) {
+// Getter und Setter für FestgeldKonto
+void Bankkunde::setFestgeldKonto(Festgeldkonto* festgeldKonto) {
   this->festgeldKonto = festgeldKonto;
 }
 Festgeldkonto* Bankkunde::getFestgeldKonto() {

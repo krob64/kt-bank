@@ -17,16 +17,18 @@ class Bankkunde {
             std::string vorname,
             std::string nachname,
             Tagesgeldkonto* tagesgeldKonto,
-            Festgeldkonto* festgelgKonto,
+            Festgeldkonto* festgeldKonto,
             Girokonto* giroKonto,
             Kreditkartenkonto* kreditkartenKonto);
-  void setKundenID(unsigned int Id);
+  Bankkunde(std::string vorname, std::string nachname);
+
+  void setKundenID(unsigned int kundenID);
   unsigned int getKundenID();
 
-  void setVorname(std::string vname);
+  void setVorname(std::string vorname);
   std::string getVorname();
 
-  void setNahname(std::string nname);
+  void setNachname(std::string nachname);
   std::string getNachname();
 
   void setTagesgeldKonto(Tagesgeldkonto* tagesgeldKonto);
