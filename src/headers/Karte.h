@@ -1,11 +1,12 @@
 /* #ifndef KARTE_H
 #define KARTE_H */
 #pragma once
-#include "Bankkunde.h"
-#include "Kreditkarte.h"
+//#include "Bankkunde.h"
+//#include "Kreditkarte.h"
 
 class Karte {
- protected:
+ //protected:
+ public:
   Karte();  // Konstruktor protected setzen um Instanzierung zu verhindern => nur Unterklassen (Kredit/Giro) instanzieren
 
  private:
@@ -15,5 +16,5 @@ class Karte {
  public:
   bool getKartenTyp();
   bool getValidKarte();
-  bool checkKarte();  // Setter für validKarte
+ // bool checkKarte();  // Setter für validKarte
 };
