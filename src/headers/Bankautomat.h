@@ -12,8 +12,8 @@ class Bankautomat {
 		~Bankautomat();
 
 
-		int auszahlung(Bankkunde*, int betrag, unsigned int pin);
-
+		int auszahlung(girokonto* girokonto, kreditkarte* kreditkarte, int auszahlungsBetrag);
+		
 		double getBargeld();
 		void setBargeld(double betrag);
         unsigned int getAutomatID();
