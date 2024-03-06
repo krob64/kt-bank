@@ -24,8 +24,14 @@ Having said that, here is a list of the programming techniques, that we want to 
 - sort bank customers and return list in alphabetical order using set oder map.
 - copy constructors
 - rule of 5, rule of 3
-
+- templates
+- testing (unit testing, function testing, fixtures etc.)
 ---
 
 https://www.freecodecamp.org/news/markdown-cheatsheet/
+---
+Book Recommendations:
+https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
+Clean-Code-Handbook-Software-Craftsmanship
+https://www.oreilly.com/library/view/clean-code-a/9780136083238/
 
