@@ -29,6 +29,9 @@ Having said that, here is a list of the programming techniques, that we want to 
 ---
 
 https://www.freecodecamp.org/news/markdown-cheatsheet/
+https://www.oose.de/wp-content/uploads/2012/05/UML-Notations%C3%BCbersicht-2.5.pdf
+https://wwwlehre.dhbw-stuttgart.de/~kfg/uml/uml.pdf
+
 ---
 Book Recommendations:
 https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
