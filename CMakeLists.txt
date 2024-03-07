@@ -31,7 +31,7 @@ add_executable(
   bank_test
   ${CMAKE_CURRENT_SOURCE_DIR}/test/Kreditkarte_test.cpp
 
- "src/Karte.cpp")
+ "src/Karte.cpp" "src/Kreditkarte.cpp")
 target_link_libraries(
   bank_test
   GTest::gtest_main

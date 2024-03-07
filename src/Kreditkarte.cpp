@@ -9,11 +9,7 @@ std::knuth_b genRand(seed);
 std::uniform_int_distribution<int> w10{0, 9};
 static std::vector<unsigned long long> kreditkartenNummern = {};
 
-class Kreditkarte {
-  std::vector<int> kreditkartenNr = {};  // vector ist einfacher als C-Array
-
- public:
-    Kreditkarte() {
+Kreditkarte::Kreditkarte() {
     generateKartenNr();  // generiert eine 15stellige Nummer + PZ
 
     while (!checkUnique(vecToInt(kreditkartenNr), kreditkartenNummern)) {
@@ -23,7 +19,7 @@ class Kreditkarte {
     kreditkartenNummern.push_back(vecToInt(kreditkartenNr));
   }
 
-  void generateKartenNr() {
+  void Kreditkarte::generateKartenNr() {
     for (int i = 0; i < 15; ++i) {
       kreditkartenNr.push_back(w10(genRand));
     }
@@ -31,7 +27,7 @@ class Kreditkarte {
     kreditkartenNr.push_back(generatePZ(kreditkartenNr));
   }
 
-  unsigned long long vecToInt(std::vector<int> vec)  // Hilfsfunktion wandelt einen vector in eine Zahl um - gehören Hilfsfunktionen ins UML?
+  unsigned long long Kreditkarte::vecToInt(std::vector<int> vec)  // Hilfsfunktion wandelt einen vector in eine Zahl um - gehören Hilfsfunktionen ins UML?
   {
     unsigned long long vecInt = 0;
 
@@ -43,7 +39,7 @@ class Kreditkarte {
     return vecInt;
   }
 
-  int generatePZ(std::vector<int> kartenNummer) {
+  int Kreditkarte::generatePZ(std::vector<int> kartenNummer) {
     std::vector<int> vecNeu = kartenNummer;
 
     for (size_t i = 0; i < vecNeu.size(); ++i)  // Schritt 1 (aus Prüfzifferberechnung.docx) multipliziert jede zweite Zahl mit 2
@@ -69,7 +65,7 @@ class Kreditkarte {
     return pz;
   }
 
-  bool checkKarte() {
+  bool Kreditkarte::checkKarte(){
     std::vector<int> vecTest = kreditkartenNr;
     int pz = vecTest.back();  // letze Ziffer (PZ)
     vecTest.pop_back();
@@ -84,7 +80,7 @@ class Kreditkarte {
     return gueltig;
   }
 
-  bool checkUnique(unsigned long long nummer, std::vector<unsigned long long> nummerListen) {
+  bool Kreditkarte::checkUnique(unsigned long long nummer, std::vector<unsigned long long> nummerListen) {
     bool einzigartig = true;
     for (size_t i = 0; i < nummerListen.size(); ++i) {
       if (nummer == nummerListen.at(i)) {
@@ -96,7 +92,7 @@ class Kreditkarte {
     return einzigartig;
   }
 
-  void printKartenNr()  // Hilfsfunktion
+  void Kreditkarte::printKartenNr()  // Hilfsfunktion
   {
     for (size_t i = 0; i < kreditkartenNr.size(); ++i) {
       std::cout << kreditkartenNr.at(i);
@@ -109,5 +105,4 @@ class Kreditkarte {
         std::cout << std::endl;
       }
     }
-  }
-};
+  };

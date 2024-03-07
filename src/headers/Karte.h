@@ -16,5 +16,5 @@ class Karte {
  public:
   bool getKartenTyp();
   bool getValidKarte();
- // bool checkKarte();  // Setter für validKarte
+virtual bool checkKarte() = 0;  // Setter für validKarte
 };
