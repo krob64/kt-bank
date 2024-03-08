@@ -2,26 +2,29 @@
 
 #include "Bank.h"
 
-// #include"Kreditkarte.cpp"
-
-// using namespace std;
-// Test aus VS 
-
-// test
-
 int main() {
-  Bank bank;
-  Bankkunde* Erwin = bank.addKunde("Erwin");
-  Bankkunde* Hans = bank.addKunde("Hans");
-  bank.Kunden[0]->einzahlen(100);
-  std::cout << "Kunde " << bank.Kunden[0]->name << " hat " << bank.Kunden[0]->getKonto()->getKontostand() << "€ auf seinem Konto." << std::endl;
-  std::cout << Erwin->kundenID << std::endl;
-  Erwin->beantragenKarte();
-  std::cout << "Kunde " << bank.Kunden[0]->beantragenKarte() << bank.Kunden[0]->getKarte()->getStatus() << std::endl;
+  Bank sparkasse = Bank::instance();
 
-  // std::get<0>(bank.Kunden.at(1))->einzahlen(100);
-  Hans->beantragenKarte();
-  std::cout << "Kunde " << bank.Kunden[1]->beantragenKarte() << bank.Kunden[1]->getKarte()->getStatus() << std::endl;
+  sparkasse.kundeAnlegen("Klabuster", "Beere");
+  sparkasse.kundeAnlegen("Ben", "Dover");
+  sparkasse.kundeAnlegen("Alexander", "Platz");
 
-  return 0;
+  sparkasse.automatAnlegen(1200);
+  sparkasse.automatAnlegen(70000);
+  sparkasse.automatAnlegen(90);
+
+  Bankkunde* current_kunde = 0;
+  sparkasse.getKunde(1, &current_kunde);
+  // 0x8723892
+  Kreditkonto* neues_girokonto = new Kreditkonto();
+  current_kunde->setKreditkartenKonto(neues_girokonto);
+  current_kunde->getKreditkartenKonto()->setKontostand(7000);
+
+  Bankautomat* current_automat = 0;
+  sparkasse.getAutomat(1, &current_automat);
+
+  current_automat->auszahlung(current_kunde->getKreditkartenKonto(), 7000);
+
+  std::cout << current_automat->getBargeld() << std::endl;
+  std::cout << current_kunde->getKreditkartenKonto()->getKontostand() << std::endl;
 }

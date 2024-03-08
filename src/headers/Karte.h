@@ -1,19 +1,17 @@
-/* #ifndef KARTE_H
-#define KARTE_H */
 #pragma once
-#include "Bankkunde.h"
-#include "Kreditkarte.h"
+
+enum Kartentypen { KREDITKARTE = 1, GIROKARTE };
 
 class Karte {
  protected:
-  Karte();  // Konstruktor protected setzen um Instanzierung zu verhindern => nur Unterklassen (Kredit/Giro) instanzieren
-
- private:
+  Kartentypen KARTEN_TYP;
   bool validKarte;  // Korrekte Überprüfung (PIN/PZ)
-  bool kartenTyp;   // Kreditkarte: true, Girokarte: false
+  bool gesperrt;
 
  public:
-  bool getKartenTyp();
+  Karte();
+  Kartentypen getKartenTyp();
   bool getValidKarte();
-  bool checkKarte();  // Setter für validKarte
+  bool isGesperrt();
+  virtual bool checkKarte() = 0;  // Setter für validKarte
 };

@@ -1,6 +1,5 @@
 #include "Bank.h"
 #include <iostream>
-#include <optional>
 
 Bank::Bank() {
   this->kundenID_gen = 0;
@@ -20,14 +19,15 @@ Bank Bank::instance() {
 }
 
 void Bank::kundeAnlegen(std::string vorname, std::string nachname) {
-  Bankkunde tempkunde = Bankkunde(vorname, nachname);
+  Bankkunde tempkunde = Bankkunde(vorname, nachname, 0);
   kunden.push_back(tempkunde);
+  // this->kundenID_gen++;
 }
 
 void Bank::kundeLoeschen(unsigned int kundenID) {
   // durch den kunden vector loopen
   for (int i = 0; i < kunden.size(); i++) {
-    if (kunden.at(i).kundenID == kundenID) {
+    if (kunden.at(i).getKundenID() == kundenID) {
       // wenn kundenID uebereinstimmt, loesche das element. (komisches iterator zeug muss hier gemacht werden?)
       this->kunden.erase(this->kunden.begin() + i);
       return;
@@ -37,14 +37,14 @@ void Bank::kundeLoeschen(unsigned int kundenID) {
   std::cout << "kundenID " << kundenID << " nicht gefunden.";
 }
 
-void Bank::automatAnlegen(unsigned int automatID) {
-  Bankautomat tempautomat = Bankautomat(automatID);
+void Bank::automatAnlegen(double automat_bargeld) {
+  Bankautomat tempautomat = Bankautomat(automat_bargeld);
   this->automaten.push_back(tempautomat);
 }
 
 void Bank::automatLoeschen(unsigned int automatID) {
   for (int i = 0; i < this->automaten.size(); i++) {
-    if (this->automaten.at(i).automatID == automatID) {
+    if (this->automaten.at(i).getAutomatID() == automatID) {
       // wenn automatID uebereinstimmt, loesche das element. (komisches iterator zeug muss hier gemacht werden?)
       this->automaten.erase(this->automaten.begin() + i);
       return;
@@ -69,10 +69,10 @@ void Bank::automatLoeschen(unsigned int automatID) {
 //   }
 // }
 
-int Bank::getKunde(unsigned int kundenID, Bankkunde* gefundenerKunde) {
+int Bank::getKunde(unsigned int kundenID, Bankkunde** gefundenerKunde) {
   for (int i = 0; i < this->kunden.size(); i++) {
     if (this->kunden[i].getKundenID() == kundenID) {
-      *gefundenerKunde = this->kunden[i];
+      *gefundenerKunde = &this->kunden[i];
       return 0;
     }
   }
@@ -80,20 +80,20 @@ int Bank::getKunde(unsigned int kundenID, Bankkunde* gefundenerKunde) {
   return ELEMENT_NOT_FOUND;
 }
 
-int Bank::getKunde(int index, Bankkunde* gefundenerKunde) {
+int Bank::getKunde(int index, Bankkunde** gefundenerKunde) {
   if (index > this->kunden.size() - 1) {
     std::cout << "index [" << index << "] in kunden is out of bounds" << std::endl;
     return VECTOR_INDEX_OOB;
   }
 
-  *gefundenerKunde = this->kunden[index];
+  *gefundenerKunde = &this->kunden[index];
   return 0;
 }
 
-int Bank::getAutomat(unsigned int automatID, Bankautomat* gefundenerAutomat) {
+int Bank::getAutomat(unsigned int automatID, Bankautomat** gefundenerAutomat) {
   for (int i = 0; i < this->automaten.size(); i++) {
     if (this->automaten[i].getAutomatID() == automatID) {
-      *gefundenerAutomat = this->automaten[i];
+      *gefundenerAutomat = &this->automaten[i];
       return 0;
     }
   }
@@ -101,13 +101,13 @@ int Bank::getAutomat(unsigned int automatID, Bankautomat* gefundenerAutomat) {
   return ELEMENT_NOT_FOUND;
 }
 
-int Bank::getAutomat(int index, Bankautomat* gefundenerAutomat) {
+int Bank::getAutomat(int index, Bankautomat** gefundenerAutomat) {
   if (index > this->automaten.size() - 1) {
     std::cout << "index [" << index << "] in automaten is out of bounds" << std::endl;
     return VECTOR_INDEX_OOB;
   }
 
-  *gefundenerAutomat = this->automaten[index];
+  *gefundenerAutomat = &this->automaten[index];
   return 0;
 }
 

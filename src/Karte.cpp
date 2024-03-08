@@ -1,26 +1,15 @@
 #include "Karte.h"
 
-class Karte {
- protected:
-  Karte() {}
+Karte::Karte() {}
 
- private:
-  bool kartenTyp = true;  // Kreditkarte: true, Girokarte: false
+Kartentypen Karte::getKartenTyp() {
+  return KARTEN_TYP;
+}
 
-  bool validKarte = false;  // Check erfolgreich - Kreditkarte: PZ, Girokarte: Pin
+bool Karte::getValidKarte() {
+  return validKarte;
+}
 
- public:
-  bool getKartenTyp() { return kartenTyp; }
-
-  bool getValidKarte() { return validKarte; }
-
-  bool checkKarte(bool kartentyp) {
-    if (kartentyp) {
-      Kreditkarte::checkKarte();
-    }
-
-    else {
-      Girokarte::checkKarte();
-    }
-  }
-};
+bool Karte::isGesperrt() {
+  return this->gesperrt;
+}
