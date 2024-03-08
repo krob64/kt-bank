@@ -2,12 +2,10 @@
 #include <iostream>
 
 Bankautomat::Bankautomat(double startBetrag) {
-	this->bargeld = startBetrag;
+  this->bargeld = startBetrag;
 }
 
-
-int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {    
-
+int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
   // bargeld-check
   if (this->bargeld < auszahlungsBetrag) {
     std::cout << "Nicht genug Geld im Automaten. Sie können momentan maximal: " << getBargeld() << "Euro abheben." << std::endl;
@@ -39,13 +37,11 @@ int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
   }
   this->bargeld -= auszahlungsBetrag;
 
-  std::string temp_string = (kkonto->getKarte()->getKartentyp() == 1) ? "Kreditkonto" : "Girokonto";
+  std::string temp_string = (kkonto->getKarte()->getKartenTyp() == 1) ? "Kreditkonto" : "Girokonto";
 
   std::cout << auszahlungsBetrag << "Euro werden von " << temp_string << " ausgezahlt..." << std::endl;
   return auszahlungsBetrag;
-  
 }
-
 
 int Bankautomat::einzahlung(KartenKonto* kkonto, int einzahlungsBetrag) {
   // kredit UND giro-konto sperrcheck
@@ -66,16 +62,15 @@ int Bankautomat::einzahlung(KartenKonto* kkonto, int einzahlungsBetrag) {
     return -1;
   }
 
-  // Der Einzahlungsbetrag wird dem Bargeldbestand vom Bankautomaten hinzugerechnet. 
+  // Der Einzahlungsbetrag wird dem Bargeldbestand vom Bankautomaten hinzugerechnet.
   this->bargeld += einzahlungsBetrag;
 
-  // Der Einzahlungsbetrag wird dem Konto (Kredit-/Girokonto) hinzugerechnet 
-  kkonto->setKontoStand(kkonto->getKontostand() + einzahlungsBetrag);
-    
+  // Der Einzahlungsbetrag wird dem Konto (Kredit-/Girokonto) hinzugerechnet
+  kkonto->setKontostand(kkonto->getKontostand() + einzahlungsBetrag);
 
-  std::string temp_string = (kkonto->getKarte()->getKartentyp() == 1) ? "Kreditkonto" : "Girokonto";
+  std::string temp_string = (kkonto->getKarte()->getKartenTyp() == 1) ? "Kreditkonto" : "Girokonto";
   std::cout << einzahlungsBetrag << "Euro werden auf das " << temp_string << " eingezahlt." << std::endl;
-  
+
   return einzahlungsBetrag;
 }
 
