@@ -18,18 +18,17 @@ Bankkunde::Bankkunde(unsigned int kundenID,
       giroKonto(giroKonto),
       kreditkartenKonto(kreditkartenKonto) 
 {
+  
+}
+
+Bankkunde::Bankkunde(std::string vorname, std::string nachname){
   this->kundenID = 0;
   this->vorname = "";
   this->nachname = "";
-  this->tagesgeldKonto = "";
-  this->festgeldKonto = "";
-  this->giroKonto = "";
-  this->kreditkartenKonto = "";
-}
-
-Bankkunde::Bankkunde(std::string vorname, std::string nachname) : vorname(vorname),nachname(nachname){
-  this->vorname = vorname;
-  this->nachname = nachname;
+  this->tagesgeldKonto = nullptr;
+  this->festgeldKonto = nullptr;
+  this->giroKonto = nullptr;
+  this->kreditkartenKonto = nullptr;
 }
 
 // Getter und Setter für Kunden-ID
