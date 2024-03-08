@@ -9,10 +9,9 @@ class Bankautomat {
 	public:
 
 		Bankautomat(double startBetrag);
-		~Bankautomat();
-
-
-		int auszahlung(girokonto* girokonto, kreditkarte* kreditkarte, int auszahlungsBetrag);
+		
+		int auszahlung(KartenKonto* kkonto, int auszahlungsBetrag);
+		int einzahlung(KartenKonto* kkonto, int einzahlungsBetrag);
 		
 		double getBargeld();
 		void setBargeld(double betrag);
