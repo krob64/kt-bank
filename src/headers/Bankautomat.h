@@ -1,6 +1,7 @@
 #pragma once
 #include "Kartenkonto.h"
 
+
 class Bankautomat {
  private:
   double bargeld = 0.0;
@@ -11,7 +12,8 @@ class Bankautomat {
   Bankautomat(double startBetrag);
   //~Bankautomat();
 
-  int auszahlung(KartenKonto* karten_konto, int auszahlungsBetrag);
+  int auszahlung(KartenKonto* kkonto, int auszahlungsBetrag);
+	int einzahlung(KartenKonto* kkonto, int einzahlungsBetrag);
 
   double getBargeld();
   void setBargeld(double betrag);
