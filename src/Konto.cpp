@@ -1,4 +1,5 @@
 #include "Konto.h"
+#include <iostream>
 
 Konto::Konto() : KONTO_NUMMER(0) {
   this->gesperrt = false;
@@ -25,7 +26,7 @@ unsigned int Konto::getKontonummer() {
   return this->KONTO_NUMMER;
 }
 
-bool Konto::getGesperrt() {
+bool Konto::isGesperrt() {
   return this->gesperrt;
 }
 
@@ -33,7 +34,16 @@ void Konto::setGesperrt(bool value) {
   this->gesperrt = value;
 }
 
-bool Konto::kontoGedeckt(double betrag) {
+bool Konto::abheben(double betrag) {
+  if (!this->isGedeckt(betrag)) {
+    std::cout << "nicht genug geld auf dem konto. Kontostand: " << this->kontostand << std::endl;
+    return false;
+  }
+  this->kontostand -= betrag;
+  return true;
+}
+
+bool Konto::isGedeckt(double betrag) {
   if (this->kontostand >= betrag) {
     return true;
   }

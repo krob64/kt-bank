@@ -1,13 +1,8 @@
-#include <iostream>
 #include "Bankautomat.h"
-#include "Bankkunde.h"
+#include <iostream>
 
-
-
-Bankautomat::Bankautomat(double startBetrag)
-{
+Bankautomat::Bankautomat(double startBetrag) {
 	this->bargeld = startBetrag;
-
 }
 
 
@@ -15,7 +10,7 @@ int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
 
   // bargeld-check
   if (this->bargeld < auszahlungsBetrag) {
-    std::cout << "Nicht genug Geld im Automaten. Sie können momentan maximal: " << getBargeld() << "Euro abheben." << std::endl;
+    std::cout << "Nicht genug Geld im Automaten. Sie kÃ¶nnen momentan maximal: " << getBargeld() << "Euro abheben." << std::endl;
     return -1;
   }
 
@@ -51,6 +46,7 @@ int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
   
 }
 
+
 int Bankautomat::einzahlung(KartenKonto* kkonto, int einzahlungsBetrag) {
   // kredit UND giro-konto sperrcheck
   if (kkonto->isGesperrt()) {
@@ -81,29 +77,18 @@ int Bankautomat::einzahlung(KartenKonto* kkonto, int einzahlungsBetrag) {
   std::cout << einzahlungsBetrag << "Euro werden auf das " << temp_string << " eingezahlt." << std::endl;
   
   return einzahlungsBetrag;
-  
 }
 
-// Getter und Setter für Bargeld
-double Bankautomat::getBargeld() 
-{
+// Getter und Setter fÃ¼r Bargeld
+double Bankautomat::getBargeld() {
   return this->bargeld;
 }
 
-
-void Bankautomat::setBargeld(double betrag) 
-{
-  this->bargeld += betrag; 
+void Bankautomat::setBargeld(double betrag) {
+  this->bargeld += betrag;
 }
 
-// Getter und Setter für AutomatID
-unsigned int Bankautomat::getAutomatID() 
-{
-  return this->automatID;
-}
-
-void Bankautomat::setAutomatID(unsigned int nummer) 
-{ 
-    automatID = nummer;
-        
+// Getter und Setter fÃ¼r AutomatID
+unsigned int Bankautomat::getAutomatID() {
+  return this->AUTOMAT_ID;
 }

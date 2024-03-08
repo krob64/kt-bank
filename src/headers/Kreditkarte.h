@@ -1,24 +1,23 @@
-/* #ifndef KARTE_H
-#define KARTE_H */
 #pragma once
-#include "Bankkunde.h"
+#include <vector>
 #include "Karte.h"
 
-class Kreditkarte {
+class Kreditkarte : public Karte {
  public:
-  static std::vector<unsigned long long> kreditkartenNummern;
+  static inline std::vector<unsigned long long> kreditkartenNummern = {};
 
   Kreditkarte();
   // ~Kreditkarte();
 
   void generateKartenNr();
-  unsigned long long vecToInt(std::vector<int>);
-  int generatePZ(std::vector<int>);
-  bool checkUnique(unsigned long long, std::vector<unsigned long long>);
+  unsigned long long vecToInt(std::vector<int> p_vector);
+  int generatePZ(std::vector<int> p_vector);
+  bool checkUnique(unsigned long long kartenNr, std::vector<unsigned long long> nummerListen);
   void printKartenNr();
+  bool checkKarte() override;
 
  private:
-  std::vector<int> kreditkartenNr;
+  std::vector<int> KREDITKARTEN_NR;
 };
 
 // #endif

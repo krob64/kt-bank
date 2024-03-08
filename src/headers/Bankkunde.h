@@ -1,16 +1,20 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Konto.h"
+#include "Festgeldkonto.h"
+#include "Girokonto.h"
+#include "Kreditkonto.h"
+#include "Tagesgeldkonto.h"
+
 class Bankkunde {
  private:
-  unsigned int kundenID;
+  unsigned int KUNDEN_ID;
   std::string vorname;
   std::string nachname;
   Tagesgeldkonto* tagesgeldKonto;
   Festgeldkonto* festgeldKonto;
   Girokonto* giroKonto;
-  Kreditkartenkonto* kreditkartenKonto;
+  Kreditkonto* kreditkartenKonto;
 
  public:
   Bankkunde(unsigned int kundenID,
@@ -19,10 +23,11 @@ class Bankkunde {
             Tagesgeldkonto* tagesgeldKonto,
             Festgeldkonto* festgeldKonto,
             Girokonto* giroKonto,
-            Kreditkartenkonto* kreditkartenKonto);
-  Bankkunde(std::string vorname, std::string nachname);
+            Kreditkonto* kreditkartenKonto);
 
-  void setKundenID(unsigned int kundenID);
+  Bankkunde(std::string vorname, std::string nachname, unsigned int p_kundenID);
+  ~Bankkunde();
+
   unsigned int getKundenID();
 
   void setVorname(std::string vorname);
@@ -38,8 +43,8 @@ class Bankkunde {
   Festgeldkonto* getFestgeldKonto();
 
   void setGiroKonto(Girokonto* giroKonto);
-  Girokonto* grtGiroKonto();
+  Girokonto* getGiroKonto();
 
-  void setKreditkartenKonto(Kreditkartenkonto* kreditkartenKonto);
-  Kreditkartenkonto* getKreditkartenKonto();
+  void setKreditkartenKonto(Kreditkonto* kreditkartenKonto);
+  Kreditkonto* getKreditkartenKonto();
 };

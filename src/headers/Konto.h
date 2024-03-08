@@ -12,11 +12,12 @@ class Konto {
 
   double getKontostand();
   void setKontostand(double betrag);
+  bool abheben(double betrag);
 
   unsigned int getKontonummer();
 
-  bool getGesperrt();
+  bool isGesperrt();
   void setGesperrt(bool value);
 
-  bool kontoGedeckt(double betrag);
+  bool isGedeckt(double betrag);
 };

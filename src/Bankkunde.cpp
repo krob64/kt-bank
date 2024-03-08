@@ -9,20 +9,16 @@ Bankkunde::Bankkunde(unsigned int kundenID,
                      Tagesgeldkonto* tagesgeldKonto,
                      Festgeldkonto* festgeldKonto,
                      Girokonto* giroKonto,
-                     Kreditkartenkonto* kreditkartenKonto)
-    : kundenID(kundenID),
+                     Kreditkonto* kreditkartenKonto)
+    : KUNDEN_ID(kundenID),
       vorname(vorname),
       nachname(nachname),
       tagesgeldKonto(tagesgeldKonto),
       festgeldKonto(festgeldKonto),
       giroKonto(giroKonto),
-      kreditkartenKonto(kreditkartenKonto) 
-{
-  
-}
+      kreditkartenKonto(kreditkartenKonto) {}
 
-Bankkunde::Bankkunde(std::string vorname, std::string nachname){
-  this->kundenID = 0;
+Bankkunde::Bankkunde(std::string vorname, std::string nachname, unsigned int p_kundenID) : KUNDEN_ID(p_kundenID) {
   this->vorname = "";
   this->nachname = "";
   this->tagesgeldKonto = nullptr;
@@ -31,13 +27,25 @@ Bankkunde::Bankkunde(std::string vorname, std::string nachname){
   this->kreditkartenKonto = nullptr;
 }
 
-// Getter und Setter für Kunden-ID
-void Bankkunde::setKundenID(unsigned int kundenID) {
-  this->kundenID =kundenID;
+Bankkunde::~Bankkunde() {
+  if (festgeldKonto) {
+    delete festgeldKonto;
+  };
+  if (tagesgeldKonto) {
+    delete tagesgeldKonto;
+  };
+  if (giroKonto) {
+    delete giroKonto;
+  };
+  if (kreditkartenKonto) {
+    delete kreditkartenKonto;
+  };
 }
 
+// Getter und Setter für Kunden-ID
+
 unsigned int Bankkunde::getKundenID() {
-  return this->kundenID;
+  return this->KUNDEN_ID;
 }
 
 // Getter und Setter für Vorname
@@ -49,10 +57,10 @@ std::string Bankkunde::Bankkunde::getVorname() {
   return this->vorname;
 }
 // Getter und Setter für Nachname
-void Bankkunde::Bankkunde::setNachname(std::string nachname) {
+void Bankkunde::setNachname(std::string nachname) {
   this->nachname = nachname;
 }
-std::string Bankkunde::Bankkunde::getNachname() {
+std::string Bankkunde::getNachname() {
   return this->nachname;
 }
 // Getter und Setter für Tagesgeldkonto
@@ -73,16 +81,17 @@ Festgeldkonto* Bankkunde::getFestgeldKonto() {
 
 // Getter und Setter für Girokonto
 void Bankkunde::setGiroKonto(Girokonto* giroKonto) {
+  // 0x8723892 //0x8723892
   this->giroKonto = giroKonto;
 }
-Girokonto* Bankkunde::Bankkunde::grtGiroKonto() {
+Girokonto* Bankkunde::getGiroKonto() {
   return this->giroKonto;
 }
 
 // Getter und Setter für Kreditkartenkonto
-void Bankkunde::setKreditkartenKonto(Kreditkartenkonto* kreditkartenKonto) {
+void Bankkunde::setKreditkartenKonto(Kreditkonto* kreditkartenKonto) {
   this->kreditkartenKonto = kreditkartenKonto;
 }
-Kreditkartenkonto* Bankkunde::Bankkunde::getKreditkartenKonto() {
+Kreditkonto* Bankkunde::getKreditkartenKonto() {
   return this->kreditkartenKonto;
 }

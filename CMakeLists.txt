@@ -13,4 +13,4 @@ add_executable(Bank ${SOURCES}) # cmake sagen, dass die Bank executable aus der 
 target_include_directories(Bank PUBLIC src/headers) # 'src/headers/' ist unser root-ordner fuer die header
                                                     # #include "headers/kreditkarte.h" wird zu #include "kreditkarte.h"
 
-target_compile_features(Bank PUBLIC cxx_std_11) # compiler optionen
+target_compile_features(Bank PUBLIC cxx_std_17) # compiler optionen
