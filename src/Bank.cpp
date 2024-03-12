@@ -19,7 +19,7 @@ Bank Bank::instance() {
 }
 
 void Bank::kundeAnlegen(std::string vorname, std::string nachname) {
-  Bankkunde tempkunde = Bankkunde(vorname, nachname, 0);
+  Bankkunde tempkunde = Bankkunde(vorname, nachname);
   kunden.push_back(tempkunde);
   // this->kundenID_gen++;
 }
