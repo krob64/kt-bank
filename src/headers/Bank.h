@@ -19,6 +19,7 @@ class Bank {
   ~Bank();
   void kundeAnlegen(std::string vorname, std::string nachname);
   void kundeLoeschen(unsigned int kundenID);
+  void kundeLoeschen(int index);
   void automatAnlegen(double automat_startbetrag);
   void automatLoeschen(unsigned int automatenID);
   int getKunde(unsigned int kundenID, Bankkunde** gefundenerKunde);

@@ -37,6 +37,14 @@ void Bank::kundeLoeschen(unsigned int kundenID) {
   std::cout << "kundenID " << kundenID << " nicht gefunden.";
 }
 
+void Bank::kundeLoeschen(int index) {
+  if (index > this->kunden.size() - 1) {
+    std::cout << "Der Index ist zu groß." << std::endl;
+    return;
+  }
+  this->kunden.erase(this->kunden.begin() + index);
+}
+
 void Bank::automatAnlegen(double automat_bargeld) {
   Bankautomat tempautomat = Bankautomat(automat_bargeld);
   this->automaten.push_back(tempautomat);
