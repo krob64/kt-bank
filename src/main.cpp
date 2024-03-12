@@ -32,5 +32,6 @@ int main() {
   std::cout << current_automat->getBargeld() << std::endl;
   std::cout << current_kunde->getKreditkartenKonto()->getKontostand() << std::endl;
 
+  sparkasse.kundeLoeschen(1);
   current_kunde->print();
 }
