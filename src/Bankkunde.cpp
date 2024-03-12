@@ -19,8 +19,8 @@ Bankkunde::Bankkunde(unsigned int kundenID,
       kreditkartenKonto(kreditkartenKonto) {}
 
 Bankkunde::Bankkunde(std::string vorname, std::string nachname, unsigned int p_kundenID) : KUNDEN_ID(p_kundenID) {
-  this->vorname = "";
-  this->nachname = "";
+  this->vorname = vorname;
+  this->nachname = nachname;
   this->tagesgeldKonto = nullptr;
   this->festgeldKonto = nullptr;
   this->giroKonto = nullptr;

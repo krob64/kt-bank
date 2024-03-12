@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include "Bank.h"
 
@@ -15,7 +16,7 @@ int main() {
 
   Bankkunde* current_kunde = 0;
   sparkasse.getKunde(1, &current_kunde);
-  // 0x8723892
+
   Kreditkonto* neues_girokonto = new Kreditkonto();
   current_kunde->setKreditkartenKonto(neues_girokonto);
   current_kunde->getKreditkartenKonto()->setKontostand(7000);
@@ -23,8 +24,11 @@ int main() {
   Bankautomat* current_automat = 0;
   sparkasse.getAutomat(1, &current_automat);
 
-  current_automat->auszahlung(current_kunde->getKreditkartenKonto(), 7000);
+  current_automat->auszahlung(current_kunde->getKreditkartenKonto(), 600);
+  std::cout << current_automat->getBargeld() << std::endl;
+  std::cout << current_kunde->getKreditkartenKonto()->getKontostand() << std::endl;
 
+  current_automat->einzahlung(current_kunde->getKreditkartenKonto(), 1230);
   std::cout << current_automat->getBargeld() << std::endl;
   std::cout << current_kunde->getKreditkartenKonto()->getKontostand() << std::endl;
 }
