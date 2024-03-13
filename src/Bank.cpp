@@ -19,7 +19,7 @@ Bank Bank::instance() {
 }
 
 void Bank::kundeAnlegen(std::string vorname, std::string nachname) {
-  Bankkunde tempkunde = Bankkunde(vorname, nachname, 0);
+  Bankkunde tempkunde = Bankkunde(vorname, nachname);
   kunden.push_back(tempkunde);
   // this->kundenID_gen++;
 }
@@ -35,6 +35,14 @@ void Bank::kundeLoeschen(unsigned int kundenID) {
   }
 
   std::cout << "kundenID " << kundenID << " nicht gefunden.";
+}
+
+void Bank::kundeLoeschen(int index) {
+  if (index > this->kunden.size() - 1) {
+    std::cout << "Der Index ist zu groß." << std::endl;
+    return;
+  }
+  this->kunden.erase(this->kunden.begin() + index);
 }
 
 void Bank::automatAnlegen(double automat_bargeld) {

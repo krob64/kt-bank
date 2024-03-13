@@ -8,6 +8,7 @@
 
 class Bankkunde {
  private:
+  static inline unsigned int kunden_id_counter = 0;
   unsigned int KUNDEN_ID;
   std::string vorname;
   std::string nachname;
@@ -25,7 +26,7 @@ class Bankkunde {
             Girokonto* giroKonto,
             Kreditkonto* kreditkartenKonto);
 
-  Bankkunde(std::string vorname, std::string nachname, unsigned int p_kundenID);
+  Bankkunde(std::string vorname, std::string nachname);
   ~Bankkunde();
 
   unsigned int getKundenID();
@@ -47,4 +48,6 @@ class Bankkunde {
 
   void setKreditkartenKonto(Kreditkonto* kreditkartenKonto);
   Kreditkonto* getKreditkartenKonto();
+
+  void print();
 };

@@ -46,9 +46,13 @@ int main() {
   //current_automat->einzahlung(current_kunde->getKreditkartenKonto(), 1230);
   std::cout << current_automat->getBargeld() << std::endl;
   std::cout << current_kunde->getKreditkartenKonto()->getKontostand() << std::endl;
+
+  
   std::cout << current_kunde->getGiroKonto()->getKontostand() << std::endl;
 
 
+  sparkasse.kundeLoeschen(1);
 
+  current_kunde->print();
 
 }
