@@ -14,11 +14,12 @@ class Bankautomat {
 	Bankautomat(double startBetrag);
 	//~Bankautomat();
 
+	bool validierung(KartenKonto* kkonto);
 	int auszahlung(KartenKonto* kkonto, int auszahlungsBetrag);
     int einzahlung(KartenKonto* kkonto, int einzahlungsBetrag);
-    void menuAuswahl(Bankkunde* bankkunde);
     KartenKonto* kartenauswahl(Bankkunde* current_kunde);
-    bool validierung(KartenKonto* kkonto);
+    void menuAuswahl(Bankkunde* bankkunde);
+       
 
 	double getBargeld();
 	void setBargeld(double betrag);

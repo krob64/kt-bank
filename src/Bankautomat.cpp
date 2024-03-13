@@ -36,7 +36,7 @@ bool Bankautomat::validierung(KartenKonto* kkonto) {
 int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
   // bargeld-check
   if (this->bargeld < auszahlungsBetrag) {
-    std::cout << "Nicht genug Geld im Automaten. Sie können momentan maximal: " << getBargeld() << "Euro abheben." << std::endl;
+    std::cout << "Nicht genug Geld im Automaten. Sie können momentan maximal: " << getBargeld() << " Euro abheben." << std::endl;
     return -1;
   }
 
@@ -53,7 +53,7 @@ int Bankautomat::auszahlung(KartenKonto* kkonto, int auszahlungsBetrag) {
 
   std::string temp_string = (kkonto->getKarte()->getKartenTyp() == 1) ? "Kreditkonto" : "Girokonto";
 
-  std::cout << auszahlungsBetrag << "Euro werden von " << temp_string << " ausgezahlt..." << std::endl;
+  std::cout << auszahlungsBetrag << " Euro werden von " << temp_string << " ausgezahlt." << std::endl;
   return auszahlungsBetrag;
 }
 
@@ -70,7 +70,7 @@ int Bankautomat::einzahlung(KartenKonto* kkonto, int einzahlungsBetrag) {
   kkonto->setKontostand(kkonto->getKontostand() + einzahlungsBetrag);
 
   std::string temp_string = (kkonto->getKarte()->getKartenTyp() == 1) ? "Kreditkonto" : "Girokonto";
-  std::cout << einzahlungsBetrag << "Euro werden auf das " << temp_string << " eingezahlt." << std::endl;
+  std::cout << einzahlungsBetrag << " Euro werden auf das " << temp_string << " eingezahlt." << std::endl;
 
   return einzahlungsBetrag;
 }
@@ -100,11 +100,10 @@ KartenKonto* Bankautomat::kartenauswahl(Bankkunde* current_kunde ) {
 
 
 void Bankautomat::menuAuswahl(Bankkunde* bankkunde) {
-
-  bool wirdAusgefuehrt = true; 
-
+ 
   KartenKonto* current_kartenauswahl = kartenauswahl(bankkunde);
 
+  bool wirdAusgefuehrt = true;
 
   while (wirdAusgefuehrt) {
     
@@ -118,10 +117,11 @@ void Bankautomat::menuAuswahl(Bankkunde* bankkunde) {
               << "3. Geld einzahlen\n"
               << "4. Programm beenden\n";
 
-    std::getline(std::cin, inputString); 
-
+    std::cin >> inputString;
+        
     // Versuch die Eingabe in einem Integer umzuwandeln
     std::istringstream eingabe(inputString);
+
 
     if (eingabe >> inputInteger) {
       // Auswahl prüfen
@@ -129,24 +129,11 @@ void Bankautomat::menuAuswahl(Bankkunde* bankkunde) {
         // Auswahl ist gültig
         switch (inputInteger) {
           case 1: {
-            // kredit UND giro-konto sperrcheck
-            if (current_kartenauswahl->isGesperrt()) {
-              std::cout << "Das Konto ist gesperrt." << std::endl;
+
+            if (!validierung(current_kartenauswahl)) {
               break;
             }
-
-            // kredit und giro-karte sperrcheck
-            if (current_kartenauswahl->getKarte()->isGesperrt()) {
-              std::cout << "Die Karte ist gesperrt." << std::endl;
-              break;
-            }
-
-            // kredit und giro-karten check
-            if (!current_kartenauswahl->getKarte()->checkKarte()) {
-              std::cout << "Error: kartenCheck nicht erfolgreich." << std::endl;
-              break;
-            }
-
+            
             std::cout << "Ihr Kontostand: " << current_kartenauswahl->getKontostand() << " Euro" << std::endl;  //  kkonto anpassen
             // std::cout << kartenauswahl() << std::endl;
 
@@ -180,16 +167,17 @@ void Bankautomat::menuAuswahl(Bankkunde* bankkunde) {
 
       } else {
         // Auswahl ist ungültig
-        std::cout << "Ungueltige Auswahl. Bitte wählen Sie eine Zahl zwischen 1 bis 4." << std::endl;
+        std::cout << "Ungueltige Auswahl. Bitte waehlen Sie eine Zahl zwischen 1 bis 4." << std::endl;
       }
     }
-
+    
     else {
 
         // Auswahl ist ungültig
-        std::cout << "Ungueltige Auswahl. Bitte wählen Sie eine Zahl zwischen 1 bis 4." << std::endl;
+        std::cout << "Test _ Ungueltige Auswahl. Bitte waehlen Sie eine Zahl zwischen 1 bis 4." << std::endl;
         
     }
+    
   }
  
   //To-Do:  muss ich noch was geschreiben werden , um in das übergeordnete Bankmenu zu kommen?  
