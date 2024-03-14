@@ -102,7 +102,7 @@ bool Kreditkarte::checkKarte() {
 
   bool gueltig = pz == generatePZ(vecTest);
   if (gueltig) {
-    std::cout << "Die Karte ist gueltig." << std::endl;
+    // std::cout << "Die Karte ist gueltig." << std::endl;
   } else {
     std::cout << "Die Karte ist nicht gueltig." << std::endl;
   }
